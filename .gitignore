@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Local preview / tooling config (not needed in the deployed site)
+.claude/
+
+# Editor
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+
+# ---- Internal working files (kept locally, not part of the public site) ----
+# Pitch/mockup pages and strategy notes — exclude so they're never served on the live domain
+/design-board.html
+/logo-board.html
+/design-board/
+/docs/
+/assets/branding/
+
+# Image backups / unused comps (the live site only needs hero-kitchen, founder-candid, danielle)
+/assets/img/hero-kitchen-original.png
+/assets/img/note-still-life.jpg
+/assets/img/porch.jpg

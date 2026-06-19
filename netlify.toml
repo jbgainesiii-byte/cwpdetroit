@@ -1,0 +1,26 @@
+# Cleaning With Purpose — public site
+# Static site: no build step. Deploy this folder as-is.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Canonicalize to the non-www apex host so SEO signals don't split.
+# (Update the host here + in index.html canonical/og:url, sitemap.xml, robots.txt if the
+#  production domain differs. For a temporary Netlify preview URL, leave noindex on.)
+[[redirects]]
+  from = "https://www.cleaningwithpurpose.org/*"
+  to = "https://cleaningwithpurpose.org/:splat"
+  status = 301
+  force = true
