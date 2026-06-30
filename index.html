@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="assets/img/hero-kitchen.jpg?v=3" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=13" />
+  <link rel="stylesheet" href="css/styles.css?v=15" />
 
   <!-- Structured data: LocalBusiness/CleaningService + Service + FAQ. NAP mirrors the visible footer byte-for-byte. -->
   <script type="application/ld+json">
@@ -433,34 +433,39 @@
       </div>
     </section>
 
-    <!-- ============ TESTIMONIALS ============
-         NOTE TO CLIENT: these are SAMPLE testimonials written in the right voice,
-         for layout only. Replace with real, permission-given customer quotes before launch.
-         Do NOT add Review/AggregateRating schema for your own reviews — Google flags
-         self-serving rating markup. Collect real reviews on your Google Business Profile;
-         those show stars natively in Maps/Search. -->
+    <!-- ============ TESTIMONIALS (real, permission-given reviews) ============
+         Visible star graphics only. Do NOT add Review/AggregateRating JSON-LD for the
+         company's own reviews — Google treats self-hosted review markup as self-serving.
+         SERP stars come from Google Business Profile reviews instead. -->
     <section class="section section--forest" id="testimonials" aria-label="What families say">
       <div class="container">
         <p class="eyebrow">What families say</p>
         <h2 class="section-title">The worry quiets down. That&rsquo;s the whole job.</h2>
         <div class="tcards">
           <article class="tcard">
-            <p class="qmark" aria-hidden="true">&ldquo;</p>
-            <blockquote>Mom didn&rsquo;t want &ldquo;a stranger fussing around her house.&rdquo; Six weeks in, she calls Thursday &ldquo;her day.&rdquo; The notes are short, but they&rsquo;re the reason I sleep.</blockquote>
-            <p class="who"><b>Renee A.</b><span>Daughter &middot; Southfield</span></p>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+            </div>
+            <blockquote>Having Danielle clean my home was wonderful. She organized and cleaned my living and dining areas, and she did it with such great care and purpose. I was very happy with her work and will definitely have her clean for me again.</blockquote>
+            <p class="who"><b>Linda R.</b><span>Detroit</span></p>
           </article>
           <article class="tcard">
-            <p class="qmark" aria-hidden="true">&ldquo;</p>
-            <blockquote>My father is a proud man, and a private one. They understood that on day one. Nothing&rsquo;s ever moved, nothing&rsquo;s ever rushed, and the update lands before I&rsquo;ve even thought to worry.</blockquote>
-            <p class="who"><b>Marcus T.</b><span>Son &middot; Grosse Pointe</span></p>
-          </article>
-          <article class="tcard">
-            <p class="qmark" aria-hidden="true">&ldquo;</p>
-            <blockquote>After Dad&rsquo;s fall we needed the house reset and someone we could trust to keep coming back. The first visit alone took a weight off. Now it&rsquo;s just part of our month.</blockquote>
-            <p class="who"><b>Linda O.</b><span>Daughter-in-law &middot; Royal Oak</span></p>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.74 5.56 6.13.89-4.44 4.32 1.05 6.11L12 16.98l-5.49 2.9 1.05-6.11L3.13 9.05l6.13-.89L12 2.6z"/></svg>
+            </div>
+            <blockquote>I was very happy with the cleaning from Danielle. She was on time, reliable, trustworthy, and hardworking. I&rsquo;m happy to recommend her.</blockquote>
+            <p class="who"><b>Ann Barbour</b><span>Royal Oak, Michigan</span></p>
           </article>
         </div>
-        <p class="testimonials-note">Building our reviews one family at a time. Ask us to connect you with a current client.</p>
+        <p class="testimonials-note">Real words from real families. Ask us to connect you with a current client.</p>
       </div>
     </section>
 

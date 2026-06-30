@@ -1526,18 +1526,16 @@ a {
 
 /* ---------- Testimonials ---------- */
 .tcards {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.2rem;
   margin-top: 2.8rem;
 }
 
-@media (min-width: 760px) {
-  .tcards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .tcard {
+  flex: 1 1 19rem;
+  max-width: 24rem;
   display: flex;
   flex-direction: column;
   background: var(--warm-white);
@@ -1547,11 +1545,11 @@ a {
   box-shadow: var(--shadow-panel);
 }
 
-.tcard:nth-child(1) {
+.tcard:nth-child(odd) {
   transform: rotate(-0.5deg);
 }
 
-.tcard:nth-child(3) {
+.tcard:nth-child(even) {
   transform: rotate(0.5deg);
 }
 
@@ -1561,13 +1559,16 @@ a {
   }
 }
 
-.tcard .qmark {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 2.6rem;
-  line-height: 0.5;
+.tcard .stars {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
   color: var(--brass);
-  height: 1.1rem;
+}
+
+.tcard .stars svg {
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 .tcard blockquote {
