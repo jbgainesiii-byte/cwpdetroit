@@ -903,7 +903,8 @@ a {
 
 .pricing-note {
   margin-top: 1.5rem;
-  font-size: 0.9063rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   color: var(--slate);
   max-width: 46rem;
 }
