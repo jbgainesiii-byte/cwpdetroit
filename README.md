@@ -13,6 +13,14 @@ https://jbgainesiii-byte.github.io/cwpdetroit/
 - Current canonical URLs, social images, robots.txt, and sitemap point to the
   working site, not an unconnected domain. Business email remains unchanged.
 
+## Approved editorial design
+
+- Two type families, straight portrait framing, shared pricing rows, and a quieter page rhythm.
+- Lanae’s full review is available in the featured review disclosure; Linda and Ann’s full review text appears below it. Danielle’s supplied biography is preserved.
+- The first-clean explanation is always visible directly below the Home Reset price, and repeated in the FAQ. The complete service exclusions remain expanded in the trust section.
+- Two generated illustrative home-detail photos support the services and client-story sections. A cleaner generated rendition of the existing family scene is used for the hero; the original image is retained. This is an illustrative image enhancement, not a pixel-faithful photographic restoration.
+- All three selected generated assets are encoded as JPEGs at their original dimensions.
+
 ## Inquiries: current live behavior
 
 GitHub Pages cannot process Netlify Forms. The public site therefore offers call,
