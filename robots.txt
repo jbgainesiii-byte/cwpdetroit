@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cleaningwithpurpose.org/sitemap.xml
+Sitemap: https://jbgainesiii-byte.github.io/cwpdetroit/sitemap.xml

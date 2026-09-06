@@ -24,3 +24,6 @@ Thumbs.db
 /assets/img/hero-kitchen-original.png
 /assets/img/note-still-life.jpg
 /assets/img/porch.jpg
+
+# Generated Netlify publish directory
+/dist/

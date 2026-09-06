@@ -43,7 +43,7 @@
   });
 
   var form = document.getElementById("walkthrough-form");
-  if (!form) return;
+  if (!form || form.hidden) return;
   var plan = document.getElementById("f-plan");
   document.querySelectorAll("[data-plan]").forEach(function (link) {
     link.addEventListener("click", function () {
@@ -69,7 +69,13 @@
       var file = input.files && input.files[0];
       var error = "";
       if (file && file.size > 2000000) error = "Please choose a photo smaller than 2 MB, or remove it and send your request without photos.";
-      if (file && file.type && !file.type.startsWith("image/")) error = "Please choose an image file for your photo.";
+      if (file) {
+        var allowedType = /^image\/(jpeg|png|webp|heic|heif|avif)$/i.test(file.type);
+        var allowedName = /\.(jpe?g|png|webp|heic|heif|avif)$/i.test(file.name || "");
+        if ((!file.type && !allowedName) || (file.type && !allowedType) || (file.name && !allowedName)) {
+          error = "Please choose a JPG, PNG, WebP, HEIC, HEIF, or AVIF image file.";
+        }
+      }
       input.setCustomValidity(error);
       if (error && !firstInvalid) firstInvalid = input;
     });

@@ -1,92 +1,92 @@
 # Cleaning With Purpose
 
-Customer-facing website for Danielle's senior-friendly home cleaning service.
-This is the public-site repository, separate from `cwp-strategy-microsite` and
-`cleaning-with-purpose-strategy`.
+Public website for Danielle's senior-friendly home cleaning service. Current URL:
+https://jbgainesiii-byte.github.io/cwpdetroit/
 
-## Site
+## Current release
 
-- Static HTML, CSS, and JavaScript. No build step or framework dependencies.
-- `index.html`: services, pricing, the Purpose Note, Danielle's story, client reviews,
-  frequently asked questions, and the free walkthrough request.
-- `thanks.html`: confirmation after a successful form submission.
-- `css/styles.css`: responsive Harbor navy, cream, and brass design.
-- `js/main.js`: accessible mobile navigation, room/FAQ accordions, package selection,
-  photo validation, and request submission with honest failure states.
-- `assets/`: existing logo, founder portrait, and two lifestyle images.
+- Three client-supplied reviews: Linda R., Ann B., and Lanae S. Existing review
+  wording is preserved; Lanae's supplied text and Danielle's replacement bio are
+  used as provided. No star rating was invented for the new review.
+- Responsive services, pricing, founder story, FAQs, and direct contact options.
+- Privacy notice, accessible field labels and navigation, and custom 404 page.
+- Current canonical URLs, social images, robots.txt, and sitemap point to the
+  working site, not an unconnected domain. Business email remains unchanged.
 
-## September 2026 refresh
+## Inquiries: current live behavior
 
-- A brighter photo-led opening, clearer service description, and visible starting price.
-- The first Home Reset is separate from the three ongoing plans.
-- Each package links into the same request and selects its service in the form.
-- The full Purpose Note is distinguished from Comfort Clean's visit completion note.
-- The example note is explicitly illustrative. The two actual client reviews from
-  commit `84cbd5a` are retained unchanged.
-- Updates and photos require agreement with the resident or appropriate representative.
-- Larger text, less crowded navigation, visible focus states, reduced-motion support,
-  and mobile controls that account for the phone's safe area.
-- The form needs only name, relationship, phone, and home city/ZIP. Other fields are optional.
-- Three separately named photo fields replace an unsupported multiple-file field.
-  Each is limited to 2,000,000 bytes in JavaScript, keeping total uploads below
-  Netlify's 8 MB request limit. No browser storage holds visitor details.
-- Request failures retain the entered details and provide a phone alternative.
-  A success message is shown only after a successful HTTP response.
-- Visible FAQ answers and JSON-LD match. Unverified pinpoint coordinates and the
-  unverified fixed service radius were removed. Existing social images are retained.
+GitHub Pages cannot process Netlify Forms. The public site therefore offers call,
+text, and email links. The online form is hidden and its fieldset disabled in
+source, including when JavaScript is unavailable. No visitor is invited to fill
+out a form that cannot be received. Contact links open the visitor's phone or
+email application; real-world phone answering and mailbox delivery are not tested.
 
-## Contact and service facts retained from the existing site
+The form remains in HTML for Netlify form detection. It is enabled only in a
+Netlify build with `CWP_FORMS_ENABLED=true`. Its name is `home-reset-request`;
+its relative POST action is `thanks.html`. Optional uploads use three separate
+fields, each limited to 2 MB by JavaScript. Netlify's server limits and spam
+filters remain the server-side controls. JavaScript validation is not a substitute
+for those controls. No secrets, API keys, or visitor details belong in this repo.
 
-- Cleaning With Purpose; Danielle, founder; established 2024.
-- Phone: 313-451-2221.
-- Email: info@cleaningwithpurpose.org.
-- Hours: Monday–Friday, 8am–4pm.
-- Metro Detroit: Detroit, Dearborn, Royal Oak, Ferndale, Southfield, Troy, Warren,
-  Grosse Pointe, Livonia, and surrounding communities; availability confirmed by request.
-- Purpose Home Reset: $225–$375; Comfort Clean: from $149/visit;
-  Peace-of-Mind Visit: from $199/visit; Purpose Plus: from $289/visit.
-- No insured/bonded claims have been added. Coverage must be confirmed before advertising it.
-- Danielle's portrait and the two real reviews come from the existing repository.
-  Lifestyle images are illustrative assets carried over from the original design.
+## Security protections
 
-## Hosting and requests
+- Live HTTPS and HTTP-to-HTTPS redirect were verified. GitHub Pages supplies HSTS.
+- A Content Security Policy meta tag restricts scripts, styles, fonts, images,
+  connections, and form destinations. Inline event handlers, inline styles,
+  `unsafe-inline`, and `unsafe-eval` are not used. Structured data has a content hash.
+- The site does not add analytics, advertising trackers, or browser storage.
+  Google Fonts requests and hosting-provider processing are described in privacy.html.
+- Netlify builds additionally emit CSP frame-ancestors, X-Frame-Options, nosniff,
+  Permissions-Policy, Referrer-Policy, and HSTS response headers in `dist/_headers`.
+  GitHub Pages does not apply that file: do not report those additional headers
+  as active on GitHub Pages. In particular, meta CSP cannot enforce frame-ancestors.
+- No package dependencies, server application, login, payment entry, or database
+  are part of this repository. No blanket security certification is implied.
 
-Deploy the repository root to Netlify using the existing `netlify.toml`.
-The form name is **home-reset-request**, with POST action `/thanks.html` and
-`multipart/form-data` encoding. Enable Netlify form detection before deploying.
-Set form notifications to the client's approved recipient, currently documented as
-`info@cleaningwithpurpose.org`.
+## Updating and building
 
-The form uses Netlify Forms, not a separate database. GitHub Pages can display the
-website but cannot process these requests. A domain purchase does not activate form
-processing or email notifications.
+GitHub Pages serves the source directly; `.nojekyll` preserves static behavior.
+After changing the JSON-LD, run `node scripts/build.mjs --source` to regenerate
+source CSP hashes and the header template before committing.
 
-Native form submission works without JavaScript on Netlify. JavaScript adds file-size
-checks, phone validation, duplicate-click prevention, error feedback, and a 25-second
-confirmation timeout. The timeout message asks visitors to check by phone before
-retrying because the server may already have received their request.
+Netlify uses `node scripts/build.mjs` and publishes `dist`. The script copies only
+public site directories and pages; it does not publish this README, tooling, or
+Git metadata. The output directory is ignored by Git. Never edit dist as source.
 
-Netlify documentation: https://docs.netlify.com/manage/forms/setup/
+The build uses `SITE_URL` when explicitly set; otherwise it uses Netlify's site
+URL, or the deploy-preview URL for a preview. URLs must be HTTPS. It adapts
+canonical URLs, social images, sitemap, robots, the 404 links, and CSP hashes.
+The business email is intentionally independent of the chosen website domain.
 
-## Before public launch
+## Remaining launch setup
 
-1. Connect the selected domain. The inherited canonical domain remains
-   `https://cleaningwithpurpose.org/` pending the final domain choice.
-   If it changes, update canonical/OG URLs, JSON-LD identifiers and asset URLs,
-   `sitemap.xml`, `robots.txt`, `llms.txt`, and the `www` redirect in `netlify.toml`.
-   Preserve the email address unless the client explicitly changes it.
-2. Confirm the retained pricing, service area, background-check statement, and
-   written service/access/photo policies with Danielle.
-3. In Netlify, confirm form detection and the notification recipient. Submit a
-   clearly labeled test, confirm it appears in Forms, and confirm the notification
-   arrives. Include a photo test before accepting customer uploads.
-4. Check the final domain and mobile experience after deployment. This refresh was
-   checked at source level; live inbox delivery and browser QA require the deployed site.
+1. Buy/connect the selected domain and configure the primary domain in Netlify.
+   Use the chosen HTTPS URL as SITE_URL if needed. Confirm TLS and www redirects.
+2. Confirm that the existing business email and phone reach Danielle. No test
+   messages have been sent by the website checks.
+3. For online inquiries, enable Netlify form detection and configure notifications
+   to the client's verified inbox. Enable CWP_FORMS_ENABLED on a preview, deploy,
+   and verify a labeled test plus an optional photo in Forms and the inbox.
+   Enable it in production only after successful delivery. Leave the direct
+   contact version active until then.
+4. The privacy notice describes the implemented website. Danielle should confirm
+   it matches how she handles inquiries and any later service records. Update it
+   if the business adds analytics, payments, or other processors.
 
-## Validation
+No Netlify account or domain settings were available in the connected tools, so
+those settings and actual submission delivery are not claimed as verified.
 
-Source checks cover local assets and anchors, unique IDs, field labels and ARIA
-references, matching FAQ structured data, package selection values, and unchanged
-client review text. JavaScript checks exercise menu focus, phone/photo validation,
-success and failure responses, and duplicate-submit prevention with a simulated
-browser API. These checks do not send live requests or verify inbox delivery.
+## Checks
+
+Source checks cover HTML anchors/assets/labels, review attribution, the supplied
+bio and new review, CSP hashes and blocked inline code, hidden/disabled inactive
+forms, FAQ structured data, and production/preview build behavior. Simulated
+interaction checks cover navigation and the enabled form's validation, success,
+failure, and duplicate-submit paths. Live checks cover HTTPS, redirect behavior,
+deployed page contents, linked resources, privacy, and the actual 404 response.
+
+Provider documentation:
+- https://docs.netlify.com/manage/forms/setup/
+- https://docs.netlify.com/manage/forms/notifications/
+- https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/frame-ancestors
