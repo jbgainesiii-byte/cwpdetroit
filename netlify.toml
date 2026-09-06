@@ -5,6 +5,9 @@
   command = "node scripts/build.mjs"
   publish = "dist"
 
+[context.production.environment]
+  SITE_URL = "https://cwpdetroit.com/"
+
 # Security headers are generated in dist/_headers by the build script.
 # Enable CWP_FORMS_ENABLED=true only on Netlify after configuring form detection
 # and notifications. Verify delivery on a preview before exposing the live form.
