@@ -7,7 +7,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const sourceMode = process.argv.includes('--source');
 const output = sourceMode ? root : path.join(root, 'dist');
 const publicBase = 'https://jbgainesiii-byte.github.io/cwpdetroit/';
-const pages = ['index.html', 'thanks.html', 'privacy.html', '404.html'];
+const pages = ['index.html', 'thanks.html', 'privacy.html', 'accessibility.html', 'service-policies.html', '404.html'];
 const textFiles = [...pages, 'robots.txt', 'sitemap.xml', 'llms.txt'];
 const requestedBase = sourceMode ? publicBase : (process.env.SITE_URL || (process.env.CONTEXT === 'deploy-preview' || process.env.CONTEXT === 'branch-deploy' ? process.env.DEPLOY_PRIME_URL : process.env.URL) || publicBase);
 const parsedBase = new URL(requestedBase);

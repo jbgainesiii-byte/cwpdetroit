@@ -253,6 +253,11 @@ section[id] { scroll-margin-top: 1rem; }
 .site-footer li { font-size: .9375rem; }
 .site-footer__legal { margin-top: 2.5rem; border-top: 1px solid #51667b; padding-top: 1.3rem; color: #c6d2dd; font-size: .8125rem; }
 .site-footer__legal p + p { margin-top: .5rem; }
+.footer-policy-links { display: flex; flex-wrap: wrap; column-gap: 1.5rem; row-gap: .25rem; margin-bottom: .75rem; }
+.footer-policy-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.site-footer__legal .site-footer__credit { margin-top: 1rem; font-size: .875rem; }
+.site-footer__credit a { text-decoration: underline; text-underline-offset: 4px; }
+.site-footer :focus-visible { outline-color: var(--brass-light); }
 .mobile-bar { display: none; position: fixed; inset: auto 0 0; z-index: 60; background: var(--warm-white); border-top: 1px solid var(--line); padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom,0px)); gap: .6rem; }
 .mobile-bar .btn { flex: 1; min-width: 0; min-height: 3rem; padding: .6rem .35rem; font-size: .875rem; }
 .thanks-main { min-height: 90vh; display: grid; place-items: center; background: var(--cream); padding: 4rem 1.25rem; }
